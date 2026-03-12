@@ -38,7 +38,7 @@ class JSON
             || !is_string($decoded['class'])
             || !array_key_exists('payload', $decoded)
             || !is_array($decoded['payload'])
-            || !in_array(Jsonable::class, ($r = class_implements($decoded['class'])) === false ? []: $r)
+            || !in_array(Jsonable::class, ($r = class_implements($decoded['class'])) === false ? [] : $r)
         ) {
             throw new InvalidMessageFormat();
         }
