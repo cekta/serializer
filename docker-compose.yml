@@ -1,0 +1,13 @@
+services:
+  app:
+    build:
+      context: ./
+      args:
+        PHP_VERSION: ${PHP_VERSION:-8.5}
+    user: ${UID:-1000}
+    volumes:
+      - ./:/app
+    environment:
+      - PHP_IDE_CONFIG=serverName=docker
+    command:
+      - test
